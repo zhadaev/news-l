@@ -7,18 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class NewsComponent {
-	upRate() {
-		this.vote++
-	}
+upRate() {
+  this.vote++;
+}
 
-	downRate() {
-		this.vote--
-	}
-	vote: number = 25;
-	@Input() news;
+downRate() {
+  this.vote--;
+}
 
-	 ngOnInit() {
-	 	this.vote = Math.floor(Math.random() * 100 - 50) + 0;
-	 }
+vote = 25;
+
+@Input() news;
 
 }

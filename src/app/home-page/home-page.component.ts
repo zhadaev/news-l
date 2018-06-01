@@ -13,11 +13,16 @@ export class HomePageComponent implements OnInit {
 
   constructor(private newsService: NewsService) {}
 
+  searchFocus($event) {
+    let target = $event.target;
+    target.innerHTML = 'Поиск';
+  }
+
   ngOnInit() {
 
-  	this.newsService.getNews().subscribe(news => {
-  		this.news = news;
-  	})
+  this.newsService.getNews().subscribe(news => {
+    this.news = news;
+  });
   }
 
 }

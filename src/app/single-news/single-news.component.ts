@@ -9,32 +9,33 @@ import { NewsService } from '../news.service';
 })
 export class SingleNewsComponent implements OnInit {
 
-	id: number;
+  id: number;
 
-    constructor(private activateRoute: ActivatedRoute, private newsService: NewsService){
-         
-        this.id = activateRoute.snapshot.params['id'];
-    }
-    singleNews;
-    news = [];
-    upRate() {
-		this.vote++
-	}
+  constructor(private activateRoute: ActivatedRoute, private newsService: NewsService) {
+    this.id = activateRoute.snapshot.params['id'];
+  }
 
-	downRate() {
-		this.vote--
-	}
-	
-	vote: number = 25;
+  public myClass = 'red';
+  public singleNews;
+  public news = [];
+  upRate() {
+    this.vote++;
+  }
 
-	ngOnInit() {
+  downRate() {
+    this.vote--;
+  }
 
-	 	this.vote = Math.floor(Math.random() * 100 - 50) + 0;
-		this.newsService.getNews().subscribe(news => {
-			this.news = news;
-			this.singleNews = news[this.id - 1];
-			
-		})
-	}
+    // tslint:disable-next-line:member-ordering
+    public vote;
+
+  ngOnInit() {
+
+    this.vote = Math.floor(Math.random() * 100 - 50) + 0;
+    this.newsService.getNews().subscribe(news => {
+      this.news = news;
+      this.singleNews = news[this.id - 1];
+    });
+  }
 
 }

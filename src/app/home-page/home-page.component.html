@@ -1,14 +1,13 @@
 <div class="row">
-    <div class="input-field col s6 offset-s3">
-      <input type="text" id="search" class="validate" [(ngModel)]="searchStr">
-      <label for="search">Search</label>
-    </div>
+  <div class="input-field col s6 offset-s3">
+    <input type="text" id="search" class="validate" [(ngModel)]="searchStr">
+    <label for="search" (click)="searchFocus($event)">Search</label>
   </div>
+</div>
 
-
-  <div class="row">
-      <app-news
-        *ngFor="let n of news | search:searchStr"
-        [news]="n"
-      ></app-news>
-  </div>
+<div class="row">
+  <app-news
+    *ngFor="let n of news | search:searchStr"
+    [news]="n"
+  ></app-news>
+</div>
