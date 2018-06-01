@@ -3,11 +3,11 @@ import { ActivatedRoute} from '@angular/router';
 import { NewsService } from '../news.service';
 
 @Component({
-  selector: 'app-single-news',
-  templateUrl: './single-news.component.html',
-  styleUrls: ['./single-news.component.scss']
+  selector: 'app-news-details',
+  templateUrl: './news-details.component.html',
+  styleUrls: ['./news-details.component.scss']
 })
-export class SingleNewsComponent implements OnInit {
+export class NewsDetailsComponent implements OnInit {
 
   id: number;
 

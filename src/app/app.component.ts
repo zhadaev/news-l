@@ -7,4 +7,5 @@ import { NewsService } from './news.service';
   styleUrls: ['./app.component.scss'],
   providers: [NewsService]
 })
+
 export class AppComponent {}

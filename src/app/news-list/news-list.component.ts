@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../news.service';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-news-list',
+  templateUrl: './news-list.component.html',
+  styleUrls: ['./news-list.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class NewsListComponent implements OnInit {
 
   news = [];
   searchStr = '';
@@ -14,7 +14,7 @@ export class HomePageComponent implements OnInit {
   constructor(private newsService: NewsService) {}
 
   searchFocus($event) {
-    let target = $event.target;
+    const target = $event.target;
     target.innerHTML = 'Поиск';
   }
 

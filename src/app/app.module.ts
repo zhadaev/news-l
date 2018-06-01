@@ -2,38 +2,38 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NewsComponent } from './news/news.component';
+import { NewsItemComponent } from './news-item/news-item.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
 import { SearchPipe } from './search.pipe';
-import { HomePageComponent } from './home-page/home-page.component';
-import { SingleNewsComponent } from './single-news/single-news.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { NewsDetailsComponent } from './news-details/news-details.component';
 
 const routes = [
   {
     path: '',
-    component: HomePageComponent
+    component: NewsListComponent
   },
   {
     path: 'news/:id',
-    component: SingleNewsComponent
+    component: NewsDetailsComponent
   },
   {
     path: '**',
     redirectTo: ''
   }
 
-]
+];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsComponent,
+    NewsItemComponent,
     SearchPipe,
-    HomePageComponent,
-    SingleNewsComponent
+    NewsListComponent,
+    NewsDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -6,8 +6,8 @@
 </div>
 
 <div class="row">
-  <app-news
+  <app-news-item
     *ngFor="let n of news | search:searchStr"
     [news]="n"
-  ></app-news>
+  ></app-news-item>
 </div>
