@@ -7,6 +7,10 @@ import { Component, Input} from '@angular/core';
 })
 
 export class NewsItemComponent {
+  vote = 0;
+
+  @Input() news;
+
   upRate() {
     this.vote++;
   }
@@ -14,11 +18,5 @@ export class NewsItemComponent {
   downRate() {
     this.vote--;
   }
-
-  // tslint:disable-next-line:member-ordering
-  vote = 0;
-
-  // tslint:disable-next-line:member-ordering
-  @Input() news;
 
 }

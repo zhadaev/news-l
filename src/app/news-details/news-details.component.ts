@@ -8,7 +8,7 @@ import { NewsService } from '../news.service';
   styleUrls: ['./news-details.component.scss']
 })
 export class NewsDetailsComponent implements OnInit {
-
+  public vote = 0;
   id: number;
 
   constructor(private activateRoute: ActivatedRoute, private newsService: NewsService) {
@@ -26,12 +26,10 @@ export class NewsDetailsComponent implements OnInit {
     this.vote--;
   }
 
-    // tslint:disable-next-line:member-ordering
-    public vote;
+
 
   ngOnInit() {
 
-    this.vote = Math.floor(Math.random() * 100 - 50) + 0;
     this.newsService.getNews().subscribe(news => {
       this.news = news;
       this.singleNews = news[this.id - 1];
