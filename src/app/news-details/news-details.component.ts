@@ -7,17 +7,18 @@ import { NewsService } from '../news.service';
   templateUrl: './news-details.component.html',
   styleUrls: ['./news-details.component.scss']
 })
+
 export class NewsDetailsComponent implements OnInit {
-  public vote = 0;
+  vote = 0;
   id: number;
+  singleNews;
+  news = [];
 
   constructor(private activateRoute: ActivatedRoute, private newsService: NewsService) {
     this.id = activateRoute.snapshot.params['id'];
   }
 
-  public myClass = 'red';
-  public singleNews;
-  public news = [];
+
   upRate() {
     this.vote++;
   }
@@ -31,9 +32,9 @@ export class NewsDetailsComponent implements OnInit {
   ngOnInit() {
 
     this.newsService.getNews().subscribe(news => {
-      this.news = news;
       this.singleNews = news[this.id - 1];
     });
+
   }
 
 }

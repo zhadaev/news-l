@@ -1,8 +1,12 @@
-.card-content{
-	height: 300px;
+.card-content {
+  height: 150px;
 }
 
-.vote{
-	display: inline-block;
-	padding: 0 10px;
+.vote {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+span.votes_block{
+  margin-top: -5px;
 }

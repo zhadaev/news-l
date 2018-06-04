@@ -1,4 +1,5 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-news-item',
@@ -7,7 +8,8 @@ import { Component, Input} from '@angular/core';
 })
 
 export class NewsItemComponent {
-  vote = 0;
+
+  public vote = 0;
 
   @Input() news;
 
