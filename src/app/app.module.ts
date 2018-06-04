@@ -9,8 +9,6 @@ import { RouterModule } from '@angular/router';
 import { SearchPipe } from './search.pipe';
 import { NewsListComponent } from './news-list/news-list.component';
 import { NewsDetailsComponent } from './news-details/news-details.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
 
 const routes = [
   {
@@ -35,15 +33,13 @@ const routes = [
     NewsItemComponent,
     SearchPipe,
     NewsListComponent,
-    NewsDetailsComponent,
-    HeaderComponent
+    NewsDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes),
-    BrowserAnimationsModule
+    RouterModule.forRoot(routes)
 
   ],
   providers: [],
