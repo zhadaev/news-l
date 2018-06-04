@@ -1,0 +1,35 @@
+<div class="col s12 m6 xl3">
+
+<div class="card shadow z-depth-3">
+
+
+      <div class="card-image">
+<img src="https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b522ae2afefadaa7290956e52c799bf2&auto=format&fit=crop&w=1350&q=80">
+
+
+          <span class="card-title">#{{news.id}} {{ news.title | uppercase }}</span>
+
+      </div>
+      <div class="card-content">
+        <p>{{ news.body | slice:0:100 }}</p>
+
+      </div>
+      <div class="card-action">
+
+        <a [routerLink]="['/news', news.id]" class="">More...</a>
+
+        <span class="right votes_block">
+          <a class="btn-floating btn-large waves-effect waves-light green btn-small" (click)="upRate()">
+            <i class="material-icons">add</i>
+          </a>
+          <div class="vote" [class.green-text]="vote > 0" [class.red-text]="vote < 0">{{vote}}
+          </div>
+          <a class="btn-floating btn-large waves-effect waves-light red btn-small" (click)="downRate()">
+            <i class="material-icons">remove</i>
+          </a>
+        </span>
+
+      </div>
+
+    </div>
+  </div>

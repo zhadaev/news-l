@@ -2,13 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NewsItemComponent } from './news-item/news-item.component';
+import { NewsItemComponent } from './components/news-item/news-item.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { SearchPipe } from './search.pipe';
-import { NewsListComponent } from './news-list/news-list.component';
-import { NewsDetailsComponent } from './news-details/news-details.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { NewsListComponent } from './components/news-list/news-list.component';
+import { NewsDetailsComponent } from './components/news-details/news-details.component';
+import { NewsService } from './services/news.service';
 
 const routes = [
   {
@@ -42,7 +43,7 @@ const routes = [
     RouterModule.forRoot(routes)
 
   ],
-  providers: [],
+  providers: [NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
