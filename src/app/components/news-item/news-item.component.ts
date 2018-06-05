@@ -10,17 +10,26 @@ import { NewsService } from '../../services/news.service';
 
 export class NewsItemComponent {
 
-  vote;
-  upRate;
-  downRate;
-
-  constructor(private newsService: NewsService) {
-    this.vote = newsService.vote;
-    this.upRate = newsService.upRate;
-    this.downRate = newsService.downRate;
-  }
+  public vote;
 
   @Input() news;
+
+  constructor(private newsService: NewsService) {
+    this.vote = newsService.getVotes();
+
+  }
+
+  upRate() {
+    this.newsService.upRate();
+    this.vote = this.newsService.getVotes();
+  }
+
+  downRate() {
+    this.newsService.downRate();
+    this.vote = this.newsService.getVotes();
+  }
+
+
 
 
 }

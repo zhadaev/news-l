@@ -13,17 +13,21 @@ export class NewsDetailsComponent implements OnInit {
   id: number;
   singleNews;
   news = [];
-  upRate;
-  downRate;
 
   constructor(private activateRoute: ActivatedRoute, private newsService: NewsService) {
-    this.vote = newsService.vote;
-    this.upRate = newsService.upRate;
-    this.downRate = newsService.downRate;
+    this.vote = newsService.getVotes();
     this.id = activateRoute.snapshot.params['id'];
   }
 
+  upRate() {
+    this.newsService.upRate();
+    this.vote = this.newsService.getVotes();
+  }
 
+  downRate() {
+    this.newsService.downRate();
+    this.vote = this.newsService.getVotes();
+  }
 
 
   ngOnInit() {

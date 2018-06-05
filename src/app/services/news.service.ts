@@ -16,6 +16,9 @@ constructor(private http: Http) {}
     this.vote--;
   }
 
+  getVotes() {
+    return this.vote;
+  }
 
   getNews() {
 
