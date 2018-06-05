@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component ({
   selector: 'app-news-list',
@@ -27,7 +27,7 @@ export class NewsListComponent implements OnInit {
   }
 
   initForm() {
-    this.searchForm = this.formBuilder.control('', );
+    this.searchForm = this.formBuilder.control('', Validators.required);
   }
 
 
