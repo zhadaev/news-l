@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component ({
   selector: 'app-news-list',
@@ -7,19 +8,27 @@ import { NewsService } from '../../services/news.service';
   styleUrls: ['./news-list.component.scss']
 })
 export class NewsListComponent implements OnInit {
-
+  searchForm: FormControl;
   news = [];
   searchStr = '';
 
-  constructor(private newsService: NewsService) {}
-
+  constructor(private newsService: NewsService, private formBuilder: FormBuilder) {}
 
 
   ngOnInit() {
+    this.initForm();
+    this.newsService.getNews().subscribe(news => {
+      this.news = news;
+    });
+    this.searchForm.valueChanges.subscribe(value => {
+      this.searchStr = value.toLowerCase();
+    });
 
-  this.newsService.getNews().subscribe(news => {
-    this.news = news;
-  });
   }
+
+  initForm() {
+    this.searchForm = this.formBuilder.control('', );
+  }
+
 
 }

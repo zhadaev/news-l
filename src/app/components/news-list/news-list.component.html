@@ -1,7 +1,9 @@
 <nav>
   <div class="nav-wrapper">
       <div class="input-field">
-        <input id="search" type="search" required class="validate" placeholder="Search..." [(ngModel)]="searchStr">
+
+        <input [formControl]="searchForm" id="search" type="search" required placeholder="Search..." class="validate">
+
 
         <label class="label-icon" for="search">
           <i class="material-icons">search</i>

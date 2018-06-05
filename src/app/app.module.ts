@@ -10,6 +10,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { NewsDetailsComponent } from './components/news-details/news-details.component';
 import { NewsService } from './services/news.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes = [
   {
@@ -40,6 +41,7 @@ const routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
 
   ],
