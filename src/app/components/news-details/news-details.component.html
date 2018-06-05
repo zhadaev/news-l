@@ -1,0 +1,28 @@
+<div class="row">
+  
+  <div class="col m10 offset-m1 s12 l8 offset-l2 xl6 offset-xl3">
+    <div class="card z-depth-3">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1519865402023-40e4b7bfcba0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7ff1b07d24dfa8aead0b040f1681dbb4&auto=format&fit=crop&w=1350&q=80">
+        <span class="card-title">#{{singleNews?.id}} {{ singleNews?.title | uppercase }}</span>
+      </div>
+      <div class="card-content">
+        <p>{{ singleNews?.body | slice:0:100 }}</p>
+      </div>
+      <div class="card-action">
+        <a routerLink="/" class="">Back...</a>
+        <span class="right votes_block">
+          <a class="btn-floating btn-large waves-effect waves-light green btn-small" (click)="upRate()">
+            <i class="material-icons">add</i>
+          </a>
+          <div class="vote" [class.green-text]="vote > 0" [class.red-text]="vote < 0">{{vote}}
+          </div>
+          <a class="btn-floating btn-large waves-effect waves-light red btn-small" (click)="downRate()">
+            <i class="material-icons">remove</i>
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -6,6 +6,19 @@ import 'rxjs/add/operator/map';
 export class NewsService {
 
 constructor(private http: Http) {}
+  vote = 1;
+
+  upRate() {
+    this.vote++;
+  }
+
+  downRate() {
+    this.vote--;
+  }
+
+  getVotes() {
+    return this.vote;
+  }
 
   getNews() {
 
