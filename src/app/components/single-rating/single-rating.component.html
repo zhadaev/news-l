@@ -1,0 +1,17 @@
+<span class="right votes_block">
+  <a class="btn-floating btn-large waves-effect waves-light green btn-small" (click)="upRate(id)">
+    <i class="material-icons">add</i>
+  </a>
+<div class="vote" [class.green-text]="votes?.vote > 0" [class.red-text]="votes?.vote < 0">{{votes?.vote ? votes?.vote : 0}}
+
+
+
+
+
+
+
+  </div>
+  <a class="btn-floating btn-large waves-effect waves-light red btn-small" (click)="downRate(id)">
+    <i class="material-icons">remove</i>
+  </a>
+</span>

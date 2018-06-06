@@ -18,16 +18,8 @@
 
         <a [routerLink]="['/news', news.id]" class="">More...</a>
 
-        <span class="right votes_block">
-          <a class="btn-floating btn-large waves-effect waves-light green btn-small" (click)="upRate()">
-            <i class="material-icons">add</i>
-          </a>
-          <div class="vote" [class.green-text]="vote > 0" [class.red-text]="vote < 0">{{vote}}
-          </div>
-          <a class="btn-floating btn-large waves-effect waves-light red btn-small" (click)="downRate()">
-            <i class="material-icons">remove</i>
-          </a>
-        </span>
+      <app-single-rating [id]="news.id"></app-single-rating>
+
 
       </div>
 

@@ -11,6 +11,8 @@ import { NewsListComponent } from './components/news-list/news-list.component';
 import { NewsDetailsComponent } from './components/news-details/news-details.component';
 import { NewsService } from './services/news.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SingleRatingComponent } from './components/single-rating/single-rating.component';
+import { RatingService } from './services/rating.service';
 
 const routes = [
   {
@@ -35,7 +37,8 @@ const routes = [
     NewsItemComponent,
     SearchPipe,
     NewsListComponent,
-    NewsDetailsComponent
+    NewsDetailsComponent,
+    SingleRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,7 @@ const routes = [
     RouterModule.forRoot(routes)
 
   ],
-  providers: [NewsService],
+  providers: [NewsService, RatingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

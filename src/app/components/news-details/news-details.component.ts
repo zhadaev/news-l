@@ -9,30 +9,18 @@ import { NewsService } from '../../services/news.service';
 })
 
 export class NewsDetailsComponent implements OnInit {
-  vote: number;
   id: number;
   singleNews;
   news = [];
 
   constructor(private activateRoute: ActivatedRoute, private newsService: NewsService) {
-    this.vote = newsService.getVotes();
-    this.id = activateRoute.snapshot.params['id'];
-  }
-
-  upRate() {
-    this.newsService.upRate();
-    this.vote = this.newsService.getVotes();
-  }
-
-  downRate() {
-    this.newsService.downRate();
-    this.vote = this.newsService.getVotes();
+    this.id = +activateRoute.snapshot.params['id'];
   }
 
 
   ngOnInit() {
     this.newsService.getNews().subscribe(news => {
-      this.singleNews = news[this.id - 1];
+      this.singleNews = news.find(elem => elem.id === this.id);
     });
 
   }
