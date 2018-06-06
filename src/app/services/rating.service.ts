@@ -11,26 +11,12 @@ export class RatingService {
 
   }
 
-  upRate(id) {
-
+  rate(val, id) {
     if (this.votes.find(el => id === el.id)) {
-      this.votes.find(el => id === el.id).vote++;
+      val === 'up' ? this.votes.find(el => id === el.id).vote++ : this.votes.find(el => id === el.id).vote--;
     } else {
-      this.votes.push({ id, vote: 1 });
+      val === 'up' ? this.votes.push({ id, vote: 1 }) : this.votes.push({ id, vote: -1 });
     }
-    console.log(this.votes);
-
-
-  }
-
-  downRate(id) {
-     if (this.votes.find(el => id === el.id)) {
-      this.votes.find(el => id === el.id).vote--;
-    } else {
-      this.votes.push({ id, vote: -1 });
-    }
-    console.log(this.votes);
-
   }
 
   getRate() {

@@ -5,7 +5,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 @Component ({
   selector: 'app-news-list',
   templateUrl: './news-list.component.html',
-  styleUrls: ['./news-list.component.scss']
+  styleUrls: ['./news-list.component.scss'],
 })
 export class NewsListComponent implements OnInit {
   searchForm: FormControl;

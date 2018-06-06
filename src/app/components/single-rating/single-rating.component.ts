@@ -20,29 +20,30 @@ export class SingleRatingComponent implements OnInit {
     this.votes = this.ratingService.getRate().find(el => this.id === el.id);
   }
 
-  upRate(id) {
-    this.ratingService.upRate(id);
 
-    if (this.votes === undefined) {
+  rate(val: string, id: number) {
+    if (val === 'up') {
+      this.ratingService.rate(val, id);
 
-      this.votes = {
-        vote: 1
-      };
+      if (this.votes === undefined) {
 
-      this.votes = this.ratingService.getRate().find(el => this.id === el.id);
-    }
-  }
+        this.votes = {
+          vote: 1
+        };
 
-  downRate(id) {
-    this.ratingService.downRate(id);
+        this.votes = this.ratingService.getRate().find(el => this.id === el.id);
+      }
+    } else if (val === 'down') {
+      this.ratingService.rate(val, id);
 
-    if (this.votes === undefined) {
+      if (this.votes === undefined) {
 
-      this.votes = {
-        vote: -1
-      };
+        this.votes = {
+          vote: -1
+        };
 
-      this.votes = this.ratingService.getRate().find(el => this.id === el.id);
+        this.votes = this.ratingService.getRate().find(el => this.id === el.id);
+      }
     }
   }
 

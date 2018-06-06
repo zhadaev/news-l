@@ -1,5 +1,7 @@
 <nav>
-  <div class="nav-wrapper">
+<div class="nav-wrapper indigo darken-3">
+
+
       <div class="input-field">
 
         <input [formControl]="searchForm" id="search" type="search" required placeholder="Search..." class="validate">
@@ -16,7 +18,7 @@
 
   <app-news-item
     *ngFor="let n of news | search:searchStr"
-    [news]="n"
-  ></app-news-item>
+    [news]="n">
+  </app-news-item>
   
 </div>

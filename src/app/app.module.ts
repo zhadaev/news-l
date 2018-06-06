@@ -13,6 +13,7 @@ import { NewsService } from './services/news.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SingleRatingComponent } from './components/single-rating/single-rating.component';
 import { RatingService } from './services/rating.service';
+import { LinkDirective } from './directives/link.directive';
 
 const routes = [
   {
@@ -38,7 +39,8 @@ const routes = [
     SearchPipe,
     NewsListComponent,
     NewsDetailsComponent,
-    SingleRatingComponent
+    SingleRatingComponent,
+    LinkDirective
   ],
   imports: [
     BrowserModule,
