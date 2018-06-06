@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SingleRatingComponent } from './components/single-rating/single-rating.component';
 import { RatingService } from './services/rating.service';
 import { LinkDirective } from './directives/link.directive';
+import { BoldDirective } from './directives/bold.directive';
 
 const routes = [
   {
@@ -40,7 +41,8 @@ const routes = [
     NewsListComponent,
     NewsDetailsComponent,
     SingleRatingComponent,
-    LinkDirective
+    LinkDirective,
+    BoldDirective
   ],
   imports: [
     BrowserModule,
