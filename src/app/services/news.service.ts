@@ -9,7 +9,7 @@ constructor(private http: Http) {}
 
   getNews() {
 
-    return this.http.get('https://jsonplaceholder.typicode.com/posts')
+    return this.http.get('http://localhost:3500/news/')
       .map(response => response.json());
 
   }

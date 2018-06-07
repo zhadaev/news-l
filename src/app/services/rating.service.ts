@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { NewsService } from './news.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
+
 export class RatingService {
   votes = [{ id: 1, vote: 5 }, { id: 2, vote: 6 }];
   vote;
