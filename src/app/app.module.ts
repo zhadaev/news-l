@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { NewsItemComponent } from './components/news-item/news-item.component';
 import { HttpModule } from '@angular/http';
@@ -19,11 +19,17 @@ import { BoldDirective } from './directives/bold.directive';
 const routes = [
   {
     path: '',
-    component: NewsListComponent
+    component: NewsListComponent,
+    data: {
+      animation: 'list'
+    }
   },
   {
     path: 'news/:id',
-    component: NewsDetailsComponent
+    component: NewsDetailsComponent,
+    data: {
+      animation: 'details'
+    }
   },
   {
     path: '**',
