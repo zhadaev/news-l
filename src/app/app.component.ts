@@ -36,8 +36,8 @@ export const routeStateTrigger =
 export class AppComponent {
 
   getAnimationData(routerOutlet: RouterOutlet) {
+
     const routeData = routerOutlet.activatedRouteData['animation'];
-    console.log(routeData);
     return routeData ? routeData : 'rootPage';
 
   }

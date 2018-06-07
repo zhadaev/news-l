@@ -1,5 +1,7 @@
-<nav>
-<div class="nav-wrapper indigo darken-3">
+<div class="navbar-fixed">
+
+  <nav>
+    <div class="nav-wrapper indigo darken-3">
 
 
 
@@ -12,13 +14,17 @@
         </label>
         <i class="material-icons">close</i>
       </div>
-  </div>
-</nav>
+    </div>
+  </nav>
+</div>
 <div class="row" id="items-content">
 
   <app-news-item
     *ngFor="let n of news | search:searchStr"
     [news]="n">
   </app-news-item>
-  
+  <div class="container center">
+      <button class="btn waves-effect waves-light indigo darken-3">Load More</button>
+  </div>
+
 </div>

@@ -24,6 +24,8 @@ export class NewsListComponent implements OnInit {
       this.searchStr = value.toLowerCase();
     });
 
+
+
   }
 
   initForm() {
