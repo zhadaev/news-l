@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { NewsService } from '../../services/news.service';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
@@ -12,7 +12,7 @@ export class NewsListComponent implements OnInit {
   news = [];
   searchStr = '';
 
-  constructor(private newsService: NewsService, private formBuilder: FormBuilder) {}
+  constructor(private newsService: NewsService, private formBuilder: FormBuilder, private elementRef: ElementRef) {}
 
 
   ngOnInit() {
@@ -30,5 +30,12 @@ export class NewsListComponent implements OnInit {
     this.searchForm = this.formBuilder.control('', Validators.required);
   }
 
+  formChange(val) {
+    if (val === 'focus') {
+      this.elementRef.nativeElement.querySelector('#items-content').classList.add('overlay');
+    } else if (val === 'blur') {
+      this.elementRef.nativeElement.querySelector('#items-content').classList.remove('overlay');
+    }
+  }
 
 }

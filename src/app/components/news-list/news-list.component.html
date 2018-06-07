@@ -2,9 +2,12 @@
 <div class="nav-wrapper indigo darken-3">
 
 
+
       <div class="input-field">
 
-        <input [formControl]="searchForm" id="search" type="search" required placeholder="Search..." class="validate">
+<input (focus)="formChange('focus')" (blur)="formChange('blur')" [formControl]="searchForm" id="search" type="search" required placeholder="Search..."
+  class="validate">
+
 
 
         <label class="label-icon" for="search">
@@ -14,7 +17,7 @@
       </div>
   </div>
 </nav>
-<div class="row">
+<div class="row" id="items-content">
 
   <app-news-item
     *ngFor="let n of news | search:searchStr"

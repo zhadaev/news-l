@@ -1,12 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RatingService } from './../../services/rating.service';
 
+
 @Component({
   selector: 'app-single-rating',
   templateUrl: './single-rating.component.html',
   styleUrls: ['./single-rating.component.scss']
 })
 export class SingleRatingComponent implements OnInit {
+
   votes = {
     vote: 0
   };
