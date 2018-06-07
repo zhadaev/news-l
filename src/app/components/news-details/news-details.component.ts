@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { NewsService } from '../news.service';
+import { NewsService } from '../../services/news.service';
+
 
 @Component({
   selector: 'app-news-details',
@@ -9,30 +10,18 @@ import { NewsService } from '../news.service';
 })
 
 export class NewsDetailsComponent implements OnInit {
-  vote = 0;
   id: number;
   singleNews;
   news = [];
 
   constructor(private activateRoute: ActivatedRoute, private newsService: NewsService) {
-    this.id = activateRoute.snapshot.params['id'];
+    this.id = +activateRoute.snapshot.params['id'];
   }
-
-
-  upRate() {
-    this.vote++;
-  }
-
-  downRate() {
-    this.vote--;
-  }
-
 
 
   ngOnInit() {
-
     this.newsService.getNews().subscribe(news => {
-      this.singleNews = news[this.id - 1];
+      this.singleNews = news.find(elem => elem.id === this.id);
     });
 
   }

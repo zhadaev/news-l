@@ -1,14 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { NewsItemComponent } from './news-item/news-item.component';
+import { NewsItemComponent } from './components/news-item/news-item.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { SearchPipe } from './search.pipe';
-import { NewsListComponent } from './news-list/news-list.component';
-import { NewsDetailsComponent } from './news-details/news-details.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { NewsListComponent } from './components/news-list/news-list.component';
+import { NewsDetailsComponent } from './components/news-details/news-details.component';
+import { NewsService } from './services/news.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SingleRatingComponent } from './components/single-rating/single-rating.component';
+import { RatingService } from './services/rating.service';
+import { LinkDirective } from './directives/link.directive';
+import { BoldDirective } from './directives/bold.directive';
 
 const routes = [
   {
@@ -33,16 +39,21 @@ const routes = [
     NewsItemComponent,
     SearchPipe,
     NewsListComponent,
-    NewsDetailsComponent
+    NewsDetailsComponent,
+    SingleRatingComponent,
+    LinkDirective,
+    BoldDirective
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [NewsService, RatingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
