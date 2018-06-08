@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
-import { NewsService } from './news.service';
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class RatingService {
-  votes = [{ id: 1, vote: 5 }, { id: 2, vote: 6 }];
-  vote;
-  constructor(private newsService: NewsService) {
 
-  }
+  votes = [{ id: 1, vote: 5 }, { id: 2, vote: 6 }];
 
   rate(val, id) {
     if (this.votes.find(el => id === el.id)) {

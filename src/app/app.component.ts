@@ -5,7 +5,7 @@ import { trigger, animate, style, group, query, transition, state, keyframes, an
 
 export const routeStateTrigger =
   trigger('routeState', [
-    transition('list <=> details', [
+    transition('* <=> *', [
       group([
         query(
           ':enter',
