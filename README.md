@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
+## AIO Server
+
+Run `npm run start` for a Json & Dev servers. Navigate to `localhost:3500` to Json and `localhost:4200` to Dev server.
+
+
 ## JSON Server
 
 Run `npm run json` for a Json-server. Navigate to `http://localhost.3500/`. Json database is in the file `/data.js`.

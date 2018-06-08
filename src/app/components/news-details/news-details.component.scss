@@ -10,3 +10,9 @@ span.votes_block {
 .details-component{
 	margin-top: 60px;
 }
+
+:host {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
