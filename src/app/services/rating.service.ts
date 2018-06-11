@@ -20,7 +20,4 @@ export class RatingService {
     return this.votes;
   }
 
-
-
-
 }

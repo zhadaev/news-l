@@ -1,21 +1,21 @@
 import { News } from './news.model';
 
-describe('NewsModel', () => {
+describe('News Model', () => {
   it('should create an instance of News', () => {
     expect(new News()).toBeTruthy();
   });
-  it('should accept values a news.model', () => {
+  it('should accept values', () => {
     let news = new News();
     news = {
       userId: 111,
       id: 11,
       title: 'Hello world',
-      body: 'Ruby',
-      image: '',
+      body: 'JS',
+      image: ''
     };
     expect(news.userId).toEqual(111);
     expect(news.id).toEqual(11);
-    expect(news.body).toEqual('Ruby');
+    expect(news.body).toEqual('JS');
     expect(news.title).toEqual('Hello world');
   });
 });

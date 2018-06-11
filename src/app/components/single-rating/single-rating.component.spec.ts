@@ -1,48 +1,27 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { RatingService } from '../../services/rating.service';
-import { MockRatingService } from '../../services/rating.service.mock';
+import { RatingService } from './../../services/rating.service';
 import { SingleRatingComponent } from './single-rating.component';
 
 describe('SingleRatingComponent', () => {
-  let component: SingleRatingComponent;
-  let fixture: ComponentFixture<SingleRatingComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [SingleRatingComponent],
-      imports: [],
-      providers: [
-        {
-          provide: RatingService,
-          useClass: MockRatingService
-        },
-      ],
-    })
-      .compileComponents();
-  }));
+  let ratingService: RatingService;
+  let component: SingleRatingComponent;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SingleRatingComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    ratingService = new RatingService();
+    component = new SingleRatingComponent(ratingService);
   });
+
 
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
-  it('should accept values a single-rating component', () => {
+
+  it('should be use a rate method', () => {
+
     component.rate('up', 2);
     component.rate('up', 2);
     component.rate('up', 2);
-    component.rate('up', 2);
-    component.rate('up', 2);
-    component.rate('up', 2);
-    component.rate('up', 2);
-    component.rate('up', 2);
-    component.rate('up', 2);
-    component.rate('up', 2);
-    expect(this.votes).toEqual(undefined);
-    expect(this.id).toEqual(undefined);
+
   });
+
 });

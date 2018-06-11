@@ -30,6 +30,7 @@ export class NewsListComponent implements OnInit {
 
   initForm() {
     this.searchForm = this.formBuilder.control('', Validators.required);
+    console.log(this.searchForm);
   }
 
   formChange(val) {

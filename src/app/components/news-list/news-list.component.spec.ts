@@ -1,29 +1,18 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-// import { NO_ERRORS_SCHEMA } from '@angular/core';
-// import { NewsService } from '../../services/news.service';
-// import { FormControl, Validators } from '@angular/forms';
-// import { NewsListComponent } from './news-list.component';
+import { NewsService } from '../../services/news.service';
+import { NewsListComponent } from './news-list.component';
 
-// describe('NewsListComponent', () => {
-//   let component: NewsListComponent;
-//   let fixture: ComponentFixture<NewsListComponent>;
+describe('NewsListComponent', () => {
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [NewsListComponent],
-//       imports: [FormControl, Validators],
-//       providers: [NewsService]
-//     })
-//       .compileComponents();
-//   }));
+  let newsService: NewsService;
+  let component: NewsListComponent;
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(NewsListComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+  beforeEach(() => {
+    newsService = new NewsService(null);
+    component = new NewsListComponent(newsService, null, null);
+  });
 
-//   it('should be created', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+  it('should be created', () => {
+    expect(component).toBeTruthy();
+  });
+
+});
