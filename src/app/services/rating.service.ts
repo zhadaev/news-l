@@ -8,7 +8,7 @@ export class RatingService {
 
   votes = [{ id: 1, vote: 5 }, { id: 2, vote: 6 }];
 
-  rate(val, id) {
+  rate(val: string, id: number) {
     if (this.votes.find(el => id === el.id)) {
       val === 'up' ? this.votes.find(el => id === el.id).vote++ : this.votes.find(el => id === el.id).vote--;
     } else {

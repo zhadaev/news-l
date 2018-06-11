@@ -33,7 +33,7 @@ export class NewsListComponent implements OnInit {
     console.log(this.searchForm);
   }
 
-  formChange(val) {
+  formChange(val: string) {
     if (val === 'focus') {
       this.elementRef.nativeElement.querySelector('#items-content').classList.add('overlay');
     } else if (val === 'blur') {

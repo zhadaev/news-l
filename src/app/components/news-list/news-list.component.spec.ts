@@ -15,4 +15,16 @@ describe('NewsListComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should be called a formChange() method', () => {
+
+    spyOn(component, 'formChange');
+    component.formChange('focus');
+    expect(component.formChange).toHaveBeenCalled();
+    expect(component.formChange).toHaveBeenCalledWith('focus');
+    component.formChange('blur');
+    expect(component.formChange).toHaveBeenCalledWith('blur');
+
+
+  });
+
 });
