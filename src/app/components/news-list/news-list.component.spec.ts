@@ -1,25 +1,30 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NewsService } from '../../services/news.service';
 import { NewsListComponent } from './news-list.component';
 
-describe('HomePageComponent', () => {
-  let component: NewsListComponent;
-  let fixture: ComponentFixture<NewsListComponent>;
+describe('NewsListComponent', () => {
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [NewsListComponent ]
-    })
-    .compileComponents();
-  }));
+  let newsService: NewsService;
+  let component: NewsListComponent;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewsListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    newsService = new NewsService(null);
+    component = new NewsListComponent(newsService, null, null);
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be called a formChange() method', () => {
+
+    spyOn(component, 'formChange');
+    component.formChange('focus');
+    expect(component.formChange).toHaveBeenCalled();
+    expect(component.formChange).toHaveBeenCalledWith('focus');
+    component.formChange('blur');
+    expect(component.formChange).toHaveBeenCalledWith('blur');
+
+
+  });
+
 });

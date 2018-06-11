@@ -1,25 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NewsService } from '../../services/news.service';
 import { NewsDetailsComponent } from './news-details.component';
 
-describe('SingleNewsComponent', () => {
-  let component: NewsDetailsComponent;
-  let fixture: ComponentFixture<NewsDetailsComponent>;
+describe('NewsDetailsComponent', () => {
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ NewsDetailsComponent ]
-    })
-    .compileComponents();
-  }));
+  let newsService: NewsService;
+  let component: NewsDetailsComponent;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewsDetailsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    newsService = new NewsService(null);
+    component = new NewsDetailsComponent(null, newsService);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

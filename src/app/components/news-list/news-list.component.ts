@@ -24,13 +24,16 @@ export class NewsListComponent implements OnInit {
       this.searchStr = value.toLowerCase();
     });
 
+
+
   }
 
   initForm() {
     this.searchForm = this.formBuilder.control('', Validators.required);
+    console.log(this.searchForm);
   }
 
-  formChange(val) {
+  formChange(val: string) {
     if (val === 'focus') {
       this.elementRef.nativeElement.querySelector('#items-content').classList.add('overlay');
     } else if (val === 'blur') {

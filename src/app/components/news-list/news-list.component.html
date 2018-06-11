@@ -1,22 +1,22 @@
-<nav>
-<div class="nav-wrapper indigo darken-3">
+<div class="navbar-fixed">
+
+  <nav>
+    <div class="nav-wrapper indigo darken-3">
 
 
 
       <div class="input-field">
 
-<input (focus)="formChange('focus')" (blur)="formChange('blur')" [formControl]="searchForm" id="search" type="search" required placeholder="Search..."
-  class="validate">
-
-
+        <input (focus)="formChange('focus')" (blur)="formChange('blur')" [formControl]="searchForm" id="search" type="search" required placeholder="Search..." class="validate">
 
         <label class="label-icon" for="search">
           <i class="material-icons">search</i>
         </label>
         <i class="material-icons">close</i>
       </div>
-  </div>
-</nav>
+    </div>
+  </nav>
+</div>
 <div class="row" id="items-content">
 
   <app-news-item

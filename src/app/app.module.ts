@@ -19,11 +19,17 @@ import { BoldDirective } from './directives/bold.directive';
 const routes = [
   {
     path: '',
-    component: NewsListComponent
+    component: NewsListComponent,
+    data: {
+      animation: 'list'
+    }
   },
   {
     path: 'news/:id',
-    component: NewsDetailsComponent
+    component: NewsDetailsComponent,
+    data: {
+      animation: 'details'
+    }
   },
   {
     path: '**',
